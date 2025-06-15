@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Insertion{
+public class Bubble{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
           System.out.println("Enter the size of the array: ");
@@ -13,18 +13,20 @@ public class Insertion{
             arr[i] = sc.nextInt();
           }
 
-         for(int i=0;i<n;i++){
-            int j = i;
-            while(j>0 && arr[j]<arr[j-1]){
-                int temp=arr[j];
-                arr[j]=arr[j-1];
-                arr[j-1]=temp;
-                j--;
+          for(int i=0;i<(n-1);i++){
+            for(int j=i+1;j<n;j++){
+                if(arr[j]<arr[i]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
             }
-         }
-
-            for(int i=0;i<n;i++){
+          }
+ for(int i=0;i<n;i++){
             System.out.println("Sorted array "+i+ " element: "+arr[i]);
           }
     }
 }
+
+    
+
